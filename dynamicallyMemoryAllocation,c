@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int *darr;
+  // darr = (int*)malloc(5*sizeof(int));
+  // for(int i = 0; i<5; i++){
+  //   scanf("%d", &darr[i]);
+  // }
+  // for(int i = 0; i<5; i++){
+  //   printf("%d\n", darr[i]);
+  // }
+  darr = (int*)calloc(8, sizeof(int));
+  for(int i =0 ; i<8; i++){
+    scanf("%d", &darr[i]);
+  }
+  darr = (int*)realloc(darr, 10*sizeof(int));
+  for(int i =0 ; i<10; i++){
+    scanf("%d", &darr[i]);
+  }
+
+  for(int i =0 ; i<10; i++){
+    printf("=>%d\n", darr[i]);
+  }
+  free(darr);
+}
